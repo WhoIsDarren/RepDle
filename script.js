@@ -255,17 +255,16 @@ function initGame() {
         displayMessage('No daily exercise found. Please check back tomorrow.', 'failure');
         return;
     }
-    
+
+    console.log("heres a tip tho,", targetExercise);
+
     loadGuessHistory();
 
     const savedStartTime = localStorage.getItem('repdle-start-time');
     if (savedStartTime) {
         startTime = new Date(savedStartTime);
-    } else {
-        startTime = new Date();
-        localStorage.setItem('repdle-start-time', startTime.toISOString());
+        startTimer();
     }
-    startTimer();
 
     if (guessHistory.includes(targetExercise) && !hasCompletedToday) {
         const elapsedTime = Math.floor((new Date() - startTime) / 1000);
