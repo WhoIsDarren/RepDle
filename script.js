@@ -255,9 +255,7 @@ function initGame() {
         displayMessage('No daily exercise found. Please check back tomorrow.', 'failure');
         return;
     }
-
-    console.log("heres a tip tho,", targetExercise);
-
+    
     loadGuessHistory();
 
     const savedStartTime = localStorage.getItem('repdle-start-time');
