@@ -15,8 +15,6 @@ let paddingIncrement = 100;
 const guessedExercises = new Set();
 let guessHistory = [];
 
-console.log("OI! No cheating! ;(");
-
 function saveGuessHistory() {
     localStorage.setItem('repdle-guess-history', JSON.stringify(guessHistory));
     localStorage.setItem('repdle-available-exercises', JSON.stringify(availableExercises));
@@ -244,6 +242,8 @@ function seededRandom(seed) {
 
 
 function initGame() {
+    console.log("OI! No cheating! ;(");
+    
     updatePlayerCount();
     if (isOneTimeLimit && checkDailyAttempt()) {
         return;
