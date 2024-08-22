@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icon.png" sizes="256x256">
+    <title>RepDle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="today-date"></div>
+    <h1 id="game-title">
+        <span style="color: #6A8EAE;">R</span>
+        <span style="color: #6A8EAE;">E</span>
+        <span style="color: #6A8EAE;">P</span>
+        <span style="color: #A3B18A;">D</span>
+        <span style="color: #A3B18A;">L</span>
+        <span style="color: #A3B18A;">E</span>
+    </h1>
+
+    <img src="images/dumbbell.png" alt="Dumbbell" id="dumbbell-image">
+
+    <div id="game-container">
+        <div id="input-container">
+            <input type="text" id="exercise-input" placeholder="Type an exercise to start!" autocomplete="off">
+            <ul id="autocomplete-list"></ul>
+            <button id="submit-btn">➤</button>
+        </div>
+
+        <p id="player-count">0 people already found out!</p>
+        <div id="reps-counter">8 reps</div>
+
+        <p>Guess the exercise correctly before you hit failure!</p>
+
+        <div id="categories">
+            <div class="category">Exercise</div>
+            <div class="category">Equipment Used</div>
+            <div class="category">MAIN Muscle Group</div>
+            <div class="category">Isolation or Compound</div>
+            <div class="category">Popularity</div>
+            <div class="category">Motion 💵</div>
+        </div>
+
+        <div id="guesses-container"></div>
+    </div>
+
+    <script type="module" src="exercises.js"></script>
+    <script type="module" src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
