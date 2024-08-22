@@ -256,8 +256,6 @@ function initGame() {
         return;
     }
 
-    console.log("heres a tip tho,", targetExercise);
-
     loadGuessHistory();
 
     const savedStartTime = localStorage.getItem('repdle-start-time');
