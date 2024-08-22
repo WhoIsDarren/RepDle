@@ -1,4 +1,3 @@
-console.log("OI! No cheating! ;(");
 import exercises from './exercises.js';
 import dailyExerciseMap from './dailyExerciseMap.js';
 
