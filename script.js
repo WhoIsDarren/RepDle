@@ -1,3 +1,4 @@
+console.log("OI! No cheating! ;(");
 import exercises from './exercises.js';
 import dailyExerciseMap from './dailyExerciseMap.js';
 
@@ -242,8 +243,6 @@ function seededRandom(seed) {
 
 
 function initGame() {
-    console.log("OI! No cheating! ;(");
-    
     updatePlayerCount();
     if (isOneTimeLimit && checkDailyAttempt()) {
         return;
