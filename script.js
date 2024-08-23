@@ -48,6 +48,7 @@ function clearGuessHistory() {
     localStorage.removeItem('repdle-guess-history');
     localStorage.removeItem('repdle-available-exercises');
     localStorage.removeItem('repdle-last-played-date');
+    localStorage.removeItem('repdle-start-time');
 }
 
 function getDailyExercise() {
@@ -258,8 +259,14 @@ function initGame() {
 
     const savedStartTime = localStorage.getItem('repdle-start-time');
     if (savedStartTime) {
-        startTime = new Date(savedStartTime);
-        startTimer();
+        const savedDate = new Date(savedStartTime);
+        const today = new Date();
+        if (savedDate.toDateString() === today.toDateString()) {
+            startTime = savedDate;
+            startTimer();
+        } else {
+            localStorage.removeItem('repdle-start-time');
+        }
     }
 
     if (guessHistory.includes(targetExercise) && !hasCompletedToday) {
