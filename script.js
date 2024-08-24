@@ -167,11 +167,17 @@ function createGuessRow(guess) {
     exerciseGuess.innerHTML = '<span class="hidden-text">' + guess + '</span>';
     guessRow.appendChild(exerciseGuess);
 
-    const categories = ['Equipment Used', 'MAIN Muscle Group', 'Isolation or Compound', 'Popularity', 'Motion 💵'];
+    const categories = ['Equipment Used', 'MAIN Muscle Group', 'Isolation or Compound', 'Starts With', 'Motion 💵'];
     categories.forEach(category => {
         const guessItem = document.createElement('div');
         guessItem.className = 'guess-item';
-        guessItem.innerHTML = '<span class="hidden-text">' + exercises[guess][category] + '</span>';
+        if (category === 'Starts With') {
+            const guessFirstLetter = guess.charAt(0).toUpperCase();
+            const targetFirstLetter = targetExercise.charAt(0).toUpperCase();
+            guessItem.innerHTML = '<span class="hidden-text">' + targetFirstLetter + '</span>';
+        } else {
+            guessItem.innerHTML = '<span class="hidden-text">' + exercises[guess][category] + '</span>';
+        }
         guessRow.appendChild(guessItem);
     });
 
@@ -396,18 +402,25 @@ function increasePadding() {
 
 function animateReveal(guessRow, guess, isInstant = false) {
     const items = guessRow.querySelectorAll('.guess-item');
+    const categories = ['Equipment Used', 'MAIN Muscle Group', 'Isolation or Compound', 'Starts With', 'Motion 💵'];
     let index = 1;
 
     function revealNext() {
         if (index < items.length) {
             const item = items[index];
-            const category = Object.keys(exercises[guess])[index - 1];
+            const category = categories[index - 1];
 
             if (!isInstant) {
                 item.classList.add('flipping');
             }
             setTimeout(() => {
-                item.classList.add(exercises[guess][category] === exercises[targetExercise][category] ? 'correct' : 'incorrect');
+                if (category === 'Starts With') {
+                    const guessFirstLetter = guess.charAt(0).toUpperCase();
+                    const targetFirstLetter = targetExercise.charAt(0).toUpperCase();
+                    item.classList.add(guessFirstLetter === targetFirstLetter ? 'correct' : 'incorrect');
+                } else {
+                    item.classList.add(exercises[guess][category] === exercises[targetExercise][category] ? 'correct' : 'incorrect');
+                }
                 if (!isInstant) {
                     item.classList.remove('flipping');
                 }
