@@ -106,6 +106,8 @@ function checkDailyAttempt() {
         targetExercise = completedExercise || 'Unknown Exercise';
         loadGuessHistory();
         showCompletedState(completionTime, wasSuccessful === 'true');
+        const totalPadding = initialPadding + (guessHistory.length * paddingIncrement);
+        document.body.style.paddingBottom = `${totalPadding}px`;
     } else {
         loadGuessHistory();
     }
