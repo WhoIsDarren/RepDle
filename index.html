@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/icon.png" sizes="256x256">
     <title>RepDle</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
+
 <body>
     <div id="today-date"></div>
     <h1 id="game-title">
@@ -44,11 +50,15 @@
         <div id="guesses-container"></div>
     </div>
 
+    <div id="how-to-play-container"></div>
+
     <script type="module" src="exercises.js"></script>
     <script type="module" src="script.js"></script>
+    <script type="text/babel" src="howtoplay.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
+    
 </body>
-
+    
 </html>
