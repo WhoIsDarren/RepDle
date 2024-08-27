@@ -235,7 +235,7 @@ function getHourlyPlayerCount() {
         playerCount += Math.floor(seededRandom(seed + i + 1) * 50) + 1;
     }
 
-    return Math.min(playerCount, 999);
+    return playerCount;
 }
 
 function getDateSeed() {
