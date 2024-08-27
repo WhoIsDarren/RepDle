@@ -8,7 +8,7 @@ let availableExercises = [...Object.keys(exercises)];
 let startTime;
 let timerInterval;
 let isAnimating = false;
-let isOneTimeLimit = true; // One Time Limit
+let isOneTimeLimit = true;
 let hasCompletedToday = false;
 let initialPadding = 200;
 let paddingIncrement = 100;
