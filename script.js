@@ -175,8 +175,7 @@ function createGuessRow(guess) {
         guessItem.className = 'guess-item';
         if (category === 'Starts With') {
             const guessFirstLetter = guess.charAt(0).toUpperCase();
-            const targetFirstLetter = targetExercise.charAt(0).toUpperCase();
-            guessItem.innerHTML = '<span class="hidden-text">' + targetFirstLetter + '</span>';
+            guessItem.innerHTML = '<span class="hidden-text">' + guessFirstLetter + '</span>';
         } else {
             guessItem.innerHTML = '<span class="hidden-text">' + exercises[guess][category] + '</span>';
         }
