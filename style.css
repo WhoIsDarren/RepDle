@@ -14,7 +14,6 @@ body {
     align-items: center;
 }
 
-
 #game-title {
     font-size: 11rem;
     font-weight: bold;
@@ -64,7 +63,7 @@ body {
     background-color: #505A71;
     color: #E3E4DB;
     font-weight: bold;
-    font-family: 'Comfortaa', cursive;
+    font-family: inherit;
 }
 
 #autocomplete-list {
@@ -99,10 +98,9 @@ body {
 
 ::placeholder {
     color: #E3E4DB;
-    font-family: 'Comfortaa', cursive;
+    font-family: inherit;
     font-weight: bold;
 }
-
 #submit-btn {
     padding: 20px 30px;
     font-size: 1.4rem;
@@ -283,7 +281,7 @@ body {
     position: fixed;
     top: 20px;
     left: 20px;
-    font-family: 'Comfortaa', cursive;
+    font-family: inherit; /* Changed to inherit from body */
     font-size: 1.5rem;
     font-weight: bold;
     color: #87F5FB;
